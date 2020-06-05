@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
             if (project) {
                 res.status(200).json(project);
             } else {
-                res.status(400).json({ message: "400" });
+                res.status(400).json({ message: "400 we do not know where that project is" });
             }
         });
 });
