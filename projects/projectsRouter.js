@@ -51,4 +51,21 @@ router.delete("/:id", (req, res) => {
         .then(() => res.status(200).json({ message: "Project has been deleted" }));
 });
 
+// put project by id
+
+router.put("/:id", (req, res) => {
+    const data = req.body;
+    const id = req.params.id;
+    if (!data.name || !data.description) {
+        res.status(400).json({ message: "would you please include a name and description" });
+    } else {
+        Projects.update(id, data)
+            .then((post) => {
+                if (post) {
+                    res.status(400).json({ message: "400 serve haveing issues with the id" });
+                }
+            });
+    }
+});
+
 module.exports = router;
