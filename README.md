@@ -39,15 +39,20 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
+a light and unopinionated framework,Compatible with connect middleware
 
 - [ ] Describe Middleware?
+ middleware is an array of functions that get executed in the order they are introduced into the server code. It also allows for more communication and data management on apps.
 
 - [ ] Describe a Resource?
+        A resource is an object with a type, associated data, relationships to other
+      resources, and a set of methods that operate on it. As described in the training kit it is cosidered everything.
 
 - [ ] What can the API return to help clients know if a request was successful?
+             the API could return a 200, 201 or a 202 to let the client know they successfully made a request.
 
 - [ ] How can we partition our application into sub-applications?
-
+        we can break out app down into sub aplications by using a router.
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
