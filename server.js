@@ -3,12 +3,13 @@ const server = express();
 
 const actionsRouter = require("./actions/actionsRouter");
 const projectsRouter = require("./projects/projectsRouter");
-server.use(express.json());
-server.use("/api/actions", logger, actionsRouter);
-server.use("/api/projects", logger, projectsRouter);
 
-server.get('/', (req, res) => {
-    res.send(`<h2>We've got a right to partyyy</h2>`);
+server.use(express.json());
+server.use("/api/actions", actionsRouter, logger);
+server.use("/api/projects", projectsRouter, logger);
+
+server.get("/", (req, res) => {
+    res.send(`were green red leader `);
 });
 
 function logger(req, res, next) {
